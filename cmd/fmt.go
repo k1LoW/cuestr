@@ -31,7 +31,10 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-var cmds []string
+var (
+	cmds  []string
+	check bool
+)
 
 var fmtCmd = &cobra.Command{
 	Use:   "fmt [...FILES]",
@@ -51,18 +54,24 @@ For each string literal format, a different formatter can be specified.
 		}
 		cf := cuefmt.New(fmdcmds)
 		eg := new(errgroup.Group)
+		diffExists := false
 		for _, fp := range args {
 			if _, err := os.Stat(fp); err != nil {
 				return err
 			}
-			b, err := os.ReadFile(fp)
-			if err != nil {
-				return err
-			}
 			eg.Go(func() error {
+				b, err := os.ReadFile(fp)
+				if err != nil {
+					return err
+				}
 				formatted, err := cf.Format(b)
 				if err != nil {
 					return err
+				}
+				if check && !bytesEqual(b, formatted) {
+					diffExists = true
+					fmt.Println(fp)
+					return nil
 				}
 				if err := os.WriteFile(fp, formatted, 0600); err != nil {
 					return err
@@ -73,11 +82,27 @@ For each string literal format, a different formatter can be specified.
 		if err := eg.Wait(); err != nil {
 			return err
 		}
+		if check && diffExists {
+			os.Exit(1)
+		}
 		return nil
 	},
+}
+
+func bytesEqual(b1, b2 []byte) bool {
+	if len(b1) != len(b2) {
+		return false
+	}
+	for i, b := range b1 {
+		if b != b2[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func init() {
 	rootCmd.AddCommand(fmtCmd)
 	fmtCmd.Flags().StringSliceVarP(&cmds, "field", "f", []string{}, "format command for string literal field in CUE files. e.g. 'Expr:deno fmt ${FILE} --ext js'")
+	fmtCmd.Flags().BoolVarP(&check, "check", "", false, "exit with status non-zero if not formatted")
 }
