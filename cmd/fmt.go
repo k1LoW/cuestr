@@ -79,5 +79,5 @@ For each string literal format, a different formatter can be specified.
 
 func init() {
 	rootCmd.AddCommand(fmtCmd)
-	fmtCmd.Flags().StringSliceVarP(&cmds, "cmd", "c", []string{}, "format command for string literals in CUE files. e.g. 'Expr:deno fmt ${FILE} --ext js'")
+	fmtCmd.Flags().StringSliceVarP(&cmds, "field", "f", []string{}, "format command for string literal field in CUE files. e.g. 'Expr:deno fmt ${FILE} --ext js'")
 }
