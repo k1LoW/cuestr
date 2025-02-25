@@ -14,6 +14,10 @@ For each string literal format, a different formatter can be specified.
 find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --cmd 'Expr:deno fmt ${FILE} --ext js' --cmd 'Query:prettier ${FILE} --parser graphql'
 ```
 
+Any formatter can be specified for each Key with the `--cmd` option ( `Key:format command` ).
+
+By formatting the file of the `FILE` environment variable, it can format string literals.
+
 ## Install
 
 **homebrew tap:**
