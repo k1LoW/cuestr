@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.2.1](https://github.com/k1LoW/cuestr/compare/v0.2.0...v0.2.1) - 2025-02-25
+### Fix bug 🐛
+- fix(fmt): correct indentation handling in stripIndent function by @k1LoW in https://github.com/k1LoW/cuestr/pull/7
+
 ## [v0.2.0](https://github.com/k1LoW/cuestr/compare/v0.1.0...v0.2.0) - 2025-02-25
 ### New Features 🎉
 - feat(fmt): add `--check` flag by @k1LoW in https://github.com/k1LoW/cuestr/pull/5
