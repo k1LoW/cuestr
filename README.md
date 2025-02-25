@@ -8,7 +8,7 @@
 
 Format CUE files and string literals in CUE files.
 
-For each string literal format, a different formatter can be specified.
+For each string literal field, a different formatter can be specified.
 
 ```console
 find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --field 'Expr:deno fmt ${FILE} --ext js' --field 'Query:prettier ${FILE} --parser graphql'
