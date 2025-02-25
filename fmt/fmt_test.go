@@ -27,6 +27,14 @@ func TestFormat(t *testing.T) {
 			},
 			"../testdata/gql_fmt.cue",
 		},
+		{
+			"format inline JavaScript and GraphQL",
+			map[string]string{
+				"Expr":  "deno fmt ${FILE} --ext js",
+				"Query": "prettier ${FILE} --parser graphql",
+			},
+			"../testdata/deno_gql_fmt.cue",
+		},
 	}
 
 	for _, tt := range tests {
