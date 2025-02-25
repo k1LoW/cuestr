@@ -13,3 +13,21 @@ For each string literal format, a different formatter can be specified.
 ```console
 find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --cmd 'Expr:deno fmt ${FILE} --ext js' --cmd 'Query:prettier ${FILE} --parser graphql'
 ```
+
+## Install
+
+**homebrew tap:**
+
+```console
+$ brew install k1LoW/tap/cuestr
+```
+
+**go install:**
+
+```console
+$ go install github.com/k1LoW/cuestr@latest
+```
+
+**manually:**
+
+Download binary from [releases page](https://github.com/k1LoW/cuestr/releases)
