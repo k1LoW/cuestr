@@ -40,7 +40,7 @@ var fmtCmd = &cobra.Command{
 	Use:   "fmt [...FILES]",
 	Short: "Format CUE files and string literals in CUE files",
 	Long: `Format CUE files and string literals in CUE files.
-For each string literal format, a different formatter can be specified.
+For each string literal field, a different formatter can be specified.
 `,
 	Args: cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
