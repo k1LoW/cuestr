@@ -92,24 +92,24 @@ func (c *Cue) Format(in []byte) ([]byte, error) {
 
 func stripIndent(v string) string {
 	lines := strings.Split(v, "\n")
-	trim := 0
-	for _, line := range lines {
-		if len(line) == 0 {
+	indent := -1
+	for _, l := range lines {
+		if l == "" {
 			continue
 		}
-		for i, r := range line {
-			if r != ' ' && r != '\t' {
-				trim = i
-				break
-			}
+		tmp := len(l) - len(strings.TrimLeft(l, " \t"))
+		if tmp > 0 && (indent == -1 || tmp < indent) {
+			indent = tmp
 		}
-		break
 	}
-	for i, line := range lines {
-		if len(line) == 0 {
+	if indent == -1 {
+		return v
+	}
+	for i, l := range lines {
+		if l == "" {
 			continue
 		}
-		lines[i] = line[trim:]
+		lines[i] = l[indent:]
 	}
 	return strings.Join(lines, "\n")
 }
