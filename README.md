@@ -4,7 +4,7 @@
 
 ## Usage
 
-### `cuestr fmt [...FILES]`
+### `cuestr fmt [FILE ...]`
 
 Format CUE files and string literals in CUE files.
 

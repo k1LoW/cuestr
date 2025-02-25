@@ -37,7 +37,7 @@ var (
 )
 
 var fmtCmd = &cobra.Command{
-	Use:   "fmt [...FILES]",
+	Use:   "fmt [FILE ...]",
 	Short: "Format CUE files and string literals in CUE files",
 	Long: `Format CUE files and string literals in CUE files.
 For each string literal field, a different formatter can be specified.
