@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.2.0](https://github.com/k1LoW/cuestr/compare/v0.1.0...v0.2.0) - 2025-02-25
+### New Features 🎉
+- feat(fmt): add `--check` flag by @k1LoW in https://github.com/k1LoW/cuestr/pull/5
+
 ## [v0.1.0](https://github.com/k1LoW/cuestr/compare/v0.0.1...v0.1.0) - 2025-02-25
 ### Other Changes
 - fix: update command flag from `--cmd` to `--field` by @k1LoW in https://github.com/k1LoW/cuestr/pull/4
