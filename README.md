@@ -2,7 +2,9 @@
 
 `cuestr` is a utility tool for string literals in CUE files.
 
-## `cuestr fmt [...FILES]`
+## Usage
+
+### `cuestr fmt [...FILES]`
 
 Format CUE files and string literals in CUE files.
 
