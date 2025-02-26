@@ -35,6 +35,13 @@ func TestFormat(t *testing.T) {
 			},
 			"../testdata/deno_gql_fmt.cue",
 		},
+		{
+			"Use placeholder",
+			map[string]string{
+				"Expr": "deno fmt ? --ext js",
+			},
+			"../testdata/deno_fmt.cue",
+		},
 	}
 
 	for _, tt := range tests {

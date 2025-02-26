@@ -13,24 +13,30 @@ import (
 	"github.com/cli/safeexec"
 )
 
-const envFileKey = "FILE"
+const (
+	envFileKey         = "FILE"
+	defaultShell       = "sh"
+	defaultPlaceholder = "?"
+)
 
 type Cue struct {
-	shell   string
-	fmtcmds map[string]string
+	shell       string
+	placeholder string
+	fmtcmds     map[string]string
 }
 
 func New(fmtcmds map[string]string) *Cue {
 	return &Cue{
-		shell:   "sh",
-		fmtcmds: fmtcmds,
+		shell:       defaultShell,
+		placeholder: defaultPlaceholder,
+		fmtcmds:     fmtcmds,
 	}
 }
 
 func (c *Cue) Format(in []byte) ([]byte, error) {
 	bin, err := safeexec.LookPath(c.shell)
 	if err != nil {
-		return nil, fmt.Errorf("failed to find sh: %w", err)
+		return nil, fmt.Errorf("failed to find %s: %w", c.shell, err)
 	}
 	f, err := parser.ParseFile("", in, parser.ParseComments)
 	if err != nil {
@@ -60,6 +66,7 @@ func (c *Cue) Format(in []byte) ([]byte, error) {
 							errr = fmt.Errorf("failed to write to temp file: %w", err)
 							return
 						}
+						fmtcmd = strings.ReplaceAll(fmtcmd, c.placeholder, f.Name())
 						cmd := exec.Command(bin, "-c", fmtcmd)
 						cmd.Env = append(os.Environ(), fmt.Sprintf("%s=%s", envFileKey, f.Name()))
 						if out, err := cmd.CombinedOutput(); err != nil {
