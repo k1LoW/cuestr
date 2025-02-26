@@ -11,7 +11,7 @@ Format CUE files and string literals in CUE files.
 For each string literal field, a different formatter can be specified.
 
 ```console
-find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --field 'Expr:deno fmt ${FILE} --ext js' --field 'Query:prettier ${FILE} --parser graphql'
+find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --field 'Expr:deno fmt ${FILE} --ext js' --field 'Query:prettier ${FILE} --write --parser graphql'
 ```
 
 Any formatter can be specified for each field with the `--field` option ( `field:format command` ).
