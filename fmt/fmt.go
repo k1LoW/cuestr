@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"slices"
 	"strings"
 
 	"cuelang.org/go/cue/ast"
@@ -99,24 +100,25 @@ func (c *Cue) Format(in []byte) ([]byte, error) {
 
 func stripIndent(v string) string {
 	lines := strings.Split(v, "\n")
-	indent := -1
+	var indents []int
 	for _, l := range lines {
-		if l == "" {
+		if strings.Trim(l, " \t") == "" {
 			continue
 		}
-		tmp := len(l) - len(strings.TrimLeft(l, " \t"))
-		if tmp > 0 && (indent == -1 || tmp < indent) {
-			indent = tmp
-		}
+		indents = append(indents, (len(l) - len(strings.TrimLeft(l, " \t"))))
 	}
-	if indent == -1 {
+	slices.Sort(indents)
+	indent := indents[0]
+	if indent == 0 {
 		return v
 	}
 	for i, l := range lines {
-		if l == "" {
+		if strings.Trim(l, " \t") == "" {
+			lines[i] = ""
 			continue
 		}
 		lines[i] = l[indent:]
 	}
+
 	return strings.Join(lines, "\n")
 }

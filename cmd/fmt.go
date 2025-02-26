@@ -66,7 +66,7 @@ For each string literal field, a different formatter can be specified.
 				}
 				formatted, err := cf.Format(b)
 				if err != nil {
-					return err
+					return fmt.Errorf("%s: %w", fp, err)
 				}
 				if check && !bytesEqual(b, formatted) {
 					diffExists = true
