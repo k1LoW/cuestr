@@ -16,7 +16,17 @@ find . -type f -name '*.cue' | xargs -I{} cuestr fmt {} --field 'Expr:deno fmt $
 
 Any formatter can be specified for each field with the `--field` option ( `field:format command` ).
 
-By formatting the file of the `FILE` environment variable, it can format string literals.
+By formatting the file of the `FILE` environment variable or placeholder `?`, it can format string literals.
+
+```console
+--field 'Expr:deno fmt ${FILE} --ext js'
+```
+
+or
+
+```console
+--field 'Expr:deno fmt ? --ext js'
+```
 
 ## Install
 
