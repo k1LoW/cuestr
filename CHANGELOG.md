@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.0](https://github.com/k1LoW/cuestr/compare/v0.3.1...v0.4.0) - 2025-02-27
+### New Features 🎉
+- feat: Support for formatting with interpolation by @k1LoW in https://github.com/k1LoW/cuestr/pull/13
+
 ## [v0.3.1](https://github.com/k1LoW/cuestr/compare/v0.3.0...v0.3.1) - 2025-02-26
 ### Fix bug 🐛
 - fix(fmt): improve error handling and indentation stripping by @k1LoW in https://github.com/k1LoW/cuestr/pull/11
