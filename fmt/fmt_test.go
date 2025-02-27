@@ -23,7 +23,7 @@ func TestFormat(t *testing.T) {
 		{
 			"format inline GraphQL",
 			map[string]string{
-				"Query": "prettier ${FILE} --parser graphql",
+				"Query": "prettier ${FILE} --write --use-tabs --parser graphql",
 			},
 			"../testdata/gql_fmt.cue",
 		},
@@ -31,7 +31,7 @@ func TestFormat(t *testing.T) {
 			"format inline JavaScript and GraphQL",
 			map[string]string{
 				"Expr":  "deno fmt ${FILE} --ext js",
-				"Query": "prettier ${FILE} --parser graphql",
+				"Query": "prettier ${FILE} --write --use-tabs --parser graphql",
 			},
 			"../testdata/deno_gql_fmt.cue",
 		},
@@ -41,6 +41,13 @@ func TestFormat(t *testing.T) {
 				"Expr": "deno fmt ? --ext js",
 			},
 			"../testdata/deno_fmt.cue",
+		},
+		{
+			"with interpolation",
+			map[string]string{
+				"Query": "prettier ${FILE} --write --use-tabs --parser graphql",
+			},
+			"../testdata/fmt_with_interpolation.cue",
 		},
 	}
 
