@@ -44,10 +44,10 @@ cancelWorkOrder: pipeline.#Resolver & {
 			Operation: pipeline.#GraphqlOperation & {
 				Query: """
 					query fetchWorkOrder($workOrderId: ID!) {
-					    workOrder(id: $workOrderId) {
-					        id
-					        status
-					    }
+						workOrder(id: $workOrderId) {
+							id
+							status
+						}
 					}
 					"""
 			}
@@ -86,20 +86,20 @@ cancelWorkOrder: pipeline.#Resolver & {
 			Operation: pipeline.#GraphqlOperation & {
 				Query: """
 					query fetchWorkOrderLineItems($workOrderId: ID!) {
-					    workOrderLineItems(query: {workOrderId: {eq: $workOrderId}}) {
-					        edges {
-					            node {
-					                quantity
-					                returnAsNewSkuItemId
-					                scrapAction
-					                moLineItem {
-					                    bomLineItem {
-					                        itemId
-					                    }
-					                }
-					            } 
-					        }
-					    }
+						workOrderLineItems(query: { workOrderId: { eq: $workOrderId } }) {
+							edges {
+								node {
+									quantity
+									returnAsNewSkuItemId
+									scrapAction
+									moLineItem {
+										bomLineItem {
+											itemId
+										}
+									}
+								}
+							}
+						}
 					}
 					"""
 			}
@@ -124,10 +124,12 @@ cancelWorkOrder: pipeline.#Resolver & {
 				"""
 			Operation: pipeline.#GraphqlOperation & {
 				Query: """
-					mutation removeAllocatedInventoryItems($input: removeAllocatedInventoryItemInput!) {
-					    removeAllocatedInventoryItem(input: $input) {
-					        success
-					    }
+					mutation removeAllocatedInventoryItems(
+						$input: removeAllocatedInventoryItemInput!
+					) {
+						removeAllocatedInventoryItem(input: $input) {
+							success
+						}
 					}
 					"""
 			}
@@ -155,9 +157,9 @@ cancelWorkOrder: pipeline.#Resolver & {
 			Operation: pipeline.#GraphqlOperation & {
 				Query: """
 					mutation scrapConsumedInventoryItems($input: scrapConsumedInventoryItemInput!) {
-					    scrapConsumedInventoryItem(input: $input) {
-					        success
-					    }
+						scrapConsumedInventoryItem(input: $input) {
+							success
+						}
 					}
 					"""
 			}
@@ -183,9 +185,9 @@ cancelWorkOrder: pipeline.#Resolver & {
 			Operation: pipeline.#GraphqlOperation & {
 				Query: """
 					mutation updateWorkOrderStatus($id: ID!, $input: WorkOrderUpdateInput!) {
-					    updateWorkOrder(id: $id, input: $input) {
-					        id
-					    }
+						updateWorkOrder(id: $id, input: $input) {
+							id
+						}
 					}
 					"""
 			}
