@@ -37,6 +37,12 @@ or
 $ brew install k1LoW/tap/cuestr
 ```
 
+**[aqua](https://aquaproj.github.io/):**
+
+```console
+$ aqua g -i k1LoW/cuestr
+```
+
 **go install:**
 
 ```console
