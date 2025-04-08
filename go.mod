@@ -3,11 +3,11 @@ module github.com/k1LoW/cuestr
 go 1.23.5
 
 require (
-	cuelang.org/go v0.12.0
+	cuelang.org/go v0.12.1
 	github.com/cli/safeexec v1.0.1
 	github.com/spf13/cobra v1.9.1
 	github.com/tenntenn/golden v0.5.4
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.13.0
 )
 
 require (
