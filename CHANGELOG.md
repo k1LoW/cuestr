@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.1](https://github.com/k1LoW/cuestr/compare/v0.4.0...v0.4.1) - 2025-04-09
+### Other Changes
+- chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot in https://github.com/k1LoW/cuestr/pull/17
+
 ## [v0.4.0](https://github.com/k1LoW/cuestr/compare/v0.3.1...v0.4.0) - 2025-02-27
 ### New Features 🎉
 - feat: Support for formatting with interpolation by @k1LoW in https://github.com/k1LoW/cuestr/pull/13
