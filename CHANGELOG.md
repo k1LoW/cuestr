@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.5.0](https://github.com/k1LoW/cuestr/compare/v0.4.1...v0.5.0) - 2025-05-26
+### Other Changes
+- chore(deps): bump golang.org/x/sync from 0.13.0 to 0.14.0 in the dependencies group by @dependabot in https://github.com/k1LoW/cuestr/pull/18
+- chore(deps): bump cuelang.org/go from 0.12.1 to 0.13.0 in the dependencies group by @dependabot in https://github.com/k1LoW/cuestr/pull/20
+
 ## [v0.4.1](https://github.com/k1LoW/cuestr/compare/v0.4.0...v0.4.1) - 2025-04-09
 ### Other Changes
 - chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot in https://github.com/k1LoW/cuestr/pull/17
