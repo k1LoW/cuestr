@@ -3,7 +3,7 @@ module github.com/k1LoW/cuestr
 go 1.24.0
 
 require (
-	cuelang.org/go v0.15.3
+	cuelang.org/go v0.15.4
 	github.com/cli/safeexec v1.0.1
 	github.com/spf13/cobra v1.10.2
 	github.com/tenntenn/golden v0.5.5
