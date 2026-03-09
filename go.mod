@@ -1,13 +1,13 @@
 module github.com/k1LoW/cuestr
 
-go 1.24.0
+go 1.25.0
 
 require (
-	cuelang.org/go v0.15.4
+	cuelang.org/go v0.16.0
 	github.com/cli/safeexec v1.0.1
 	github.com/spf13/cobra v1.10.2
 	github.com/tenntenn/golden v0.5.5
-	golang.org/x/sync v0.19.0
+	golang.org/x/sync v0.20.0
 )
 
 require (
@@ -17,5 +17,5 @@ require (
 	github.com/josharian/mapfs v0.0.0-20210615234106-095c008854e6 // indirect
 	github.com/josharian/txtarfs v0.0.0-20240408113805-5dc76b8fe6bf // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
-	golang.org/x/tools v0.38.0 // indirect
+	golang.org/x/tools v0.42.0 // indirect
 )
