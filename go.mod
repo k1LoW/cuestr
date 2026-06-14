@@ -7,7 +7,7 @@ require (
 	github.com/cli/safeexec v1.0.1
 	github.com/spf13/cobra v1.10.2
 	github.com/tenntenn/golden v0.5.5
-	golang.org/x/sync v0.20.0
+	golang.org/x/sync v0.21.0
 )
 
 require (
