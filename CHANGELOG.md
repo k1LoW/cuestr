@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.4.4](https://github.com/k1LoW/cuestr/compare/v0.4.3...v0.4.4) - 2026-06-21
+
+### Other Changes
+- chore(deps): bump actions/checkout from 6 to 7 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/cuestr/pull/39
+- chore(deps): bump golang.org/x/sync from 0.20.0 to 0.21.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/cuestr/pull/38
+
 ## [v0.4.3](https://github.com/k1LoW/cuestr/compare/v0.4.2...v0.4.3) - 2026-04-13
 ### Other Changes
 - chore(deps): bump cuelang.org/go from 0.15.1 to 0.15.3 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/cuestr/pull/32
