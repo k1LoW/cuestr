@@ -1,6 +1,6 @@
 module github.com/k1LoW/cuestr
 
-go 1.25.0
+go 1.26.8
 
 require (
 	cuelang.org/go v0.16.1
